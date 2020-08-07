@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Roboto">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                <img src="img/sigma-logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                &nbsp;
+            </div>
+            <div class="col-lg-8">
+                <h2 class="text-center">Prueba de desarrollo Sigma</h2>
+                <p class="text-center my-2">
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium perspiciatis nihil fuga similique dolores tempora animi, accusantium nemo, non adipisci molestias, voluptatem maiores veritatis necessitatibus repellat quibusdam eum? Neque, quam?
+                </p>
+            </div>
+            <div class="col-lg-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img src="img/sigma-image.png" alt="Imagen" class="imagenFormulario">
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="container formulario" id="app">
+                    <form action="form.php" method="post">
+                        <div class="row">
+                            <div class="col-12 mt-4 ">
+                                <div class="mb-3">
+                                    <label for="Departamento" class="form-label">Departamento*</label>
+                                    <select name="Departamento" id="" class="form-select">
+                                        <optgroup v-for="departamento in departamentos">
+                                            <option :value="departamento.location.state">{{departamento.location.state}}</option>
+                                            <!-- <option value="Amazonas">Amazonas</option>
+                                            <option value="Antioquia">Antioquia</option> -->
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Ciudad" class="form-label">Ciudad*</label>
+                                    <select name="Ciudad" id="" class="form-select">
+                                        <optgroup v-if="departamento.location.state" v-for="departamento in departamentos">
+                                            <<!-- option value="Leticia">Leticia</option>
+                                            <option value="Medellín">Medellín</option> -->
+                                            <option :value="departamento.location.city">{{departamento.location.city}}</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Nombre" class="form-label">Nombre*</label>
+                                    <input type="text" class="form-control" name="Nombre" required="true">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Email" class="form-label">Correo*</label>
+                                    <input type="email" class="form-control" name="Email" required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-3 col-sm-4">
+                                &nbsp;
+                            </div>
+                            <div class="col-6 col-sm-4 mb-3 d-flex justify-content-center align-items-center">
+                                <button class="boton" type="submit" id="enviar" data-toggle="modal" data-target="#Respuesta">ENVIAR</button>
+                                <div class="modal fade" id="Respuesta" tabindex="-1" aria-labelledby="respuestaUsuario" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button class="close" data-dismiss="modal" aria-label="close">
+                                                    <span>
+                                                        &times;
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="text-center">
+                                                    Tu información ha sido recibida satisfactoriamente
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/index.js"></script>
+    <!-- <script src="js/index2.js"></script> -->
+</body>
+</html>

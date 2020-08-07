@@ -1,0 +1,55 @@
+/*Elementos de neutralidad*/
+
+/*Aquí va HTML, body */
+
+/*Etiquetas estructurales*/
+
+/*Aquí va Header, Aside, Article, entre otros */
+
+/*Imágenes*/
+
+.imagenFormulario{
+    width: 80%;
+}
+
+
+/*Fuentes*/
+
+h2{
+    font-weight: bold;
+}
+
+p{
+    font-family: 'Roboto';
+}
+
+/*Elementos del formulario*/
+
+.formulario{
+    border-radius: 20px;
+    background: #f1f1f1;
+    margin: 20px;
+    box-shadow: 5px 10px 8px #DDD;
+}
+
+label{
+    font-weight: bold;
+}
+
+.boton {
+    -webkit-border-radius: 20;
+    -moz-border-radius: 20;
+    border-radius: 20px;
+    border: 1px solid #FFF;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    background: #d93470;
+    padding: 10px 35px 10px 35px;
+    text-decoration: none;
+  }
+  
+  .boton:hover {
+    background: #d60b55;
+    text-decoration: none;
+  }
